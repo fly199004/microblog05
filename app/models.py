@@ -4,7 +4,7 @@ from flask_login import UserMixin
 from flask_wtf import FlaskForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from wtforms.fields.simple import StringField, TextAreaField, SubmitField
-from wtforms.validators import DataRequired, Length
+from wtforms.validators import DataRequired, Length, ValidationError
 
 from app import db, login
 from hashlib import md5
@@ -50,3 +50,14 @@ class EditProfileForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     about_me = TextAreaField('About',validators=[Length(min=0,max=140)])
     submit = SubmitField('Submit')
+
+    def __init__(self,original_username,*args, **kwargs):
+        super(EditProfileForm, self).__init__(*args, **kwargs)
+        self.original_username = original_username
+
+    def validate_username(self,username):
+        if username.data != self.original_username:
+            user = User.query.filter_by(username=username.data).first()
+            if user is not None:
+                raise ValidationError('Please use a different username.')
+
