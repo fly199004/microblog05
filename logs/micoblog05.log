@@ -137,3 +137,4 @@ jinja2.exceptions.UndefinedError: 'url' is undefined
 2024-01-30 10:53:45,099 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
 2024-01-30 11:00:12,365 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
 2024-01-30 11:00:39,833 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-30 11:41:04,828 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:48]

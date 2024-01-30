@@ -1,5 +1,7 @@
 from datetime import datetime
+from time import time
 
+import jwt
 from flask_login import UserMixin
 from flask_wtf import FlaskForm
 from sqlalchemy.sql.functions import user
@@ -7,7 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from wtforms.fields.simple import StringField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Length, ValidationError
 
-from app import db, login
+from app import db, login, app
 from hashlib import md5
 
 
@@ -69,6 +71,18 @@ class User(UserMixin,db.Model):
         own = Post.query.filter_by(user_id=self.id)
         return followed.union(own).order_by(Post.timestamp.desc())
 
+    def get_reset_password_token(self,expires_sec=600):
+        return jwt.encode({'reset_password':self.id, 'exp':time()+expires_sec},
+                          app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
+
+    @staticmethod
+    def verify_reset_password_token(token):
+        try:
+            id = jwt.decode(token, app.config['SECRET_KEY'],
+                            algorithms=['HS256'])['reset_password']
+        except:
+            return
+        return User.query.get(id)
 
 
 
