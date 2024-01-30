@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="080c60a1-bba8-464d-974c-4ca02a73ba30" name="Changes" comment="chapter 2 templates">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/micoblog05.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/micoblog05.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/micoblog05.log.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/micoblog05.log.2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/micoblog05.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/logs/micoblog05.log.3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/micoblog05.log.4" beforeDir="false" afterPath="$PROJECT_DIR$/logs/micoblog05.log.4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/micoblog05.log.5" beforeDir="false" afterPath="$PROJECT_DIR$/logs/micoblog05.log.5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/micoblog05.log.6" beforeDir="false" afterPath="$PROJECT_DIR$/logs/micoblog05.log.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/micoblog05.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/logs/micoblog05.log.7" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +122,7 @@
       <updated>1706446422882</updated>
       <workItem from="1706446441864" duration="3139000" />
       <workItem from="1706509286413" duration="12323000" />
-      <workItem from="1706578842129" duration="5044000" />
+      <workItem from="1706578842129" duration="5393000" />
     </task>
     <task id="LOCAL-00001" summary="new project">
       <option name="closed" value="true" />
