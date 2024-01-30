@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms.fields.simple import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
+from wtforms.fields.simple import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms.validators import DataRequired, Email, EqualTo, ValidationError, Length
 
 from app.models import User
 
@@ -28,3 +28,8 @@ class RegistrationForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Plase use a different email address.')
+
+class PostForm(FlaskForm):
+    post = TextAreaField('Say something',validators=[DataRequired(),
+             Length(min=1,max=140)])
+    submit = SubmitField('Submit')

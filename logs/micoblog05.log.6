@@ -1,4 +1,4 @@
-2024-01-30 10:44:10,946 ERROR: Exception on / [GET] [in D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\flask\app.py:828]
+2024-01-29 18:21:10,610 ERROR: Exception on / [GET] [in D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\flask\app.py:828]
 Traceback (most recent call last):
   File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
     self.dialect.do_execute(
@@ -21,7 +21,7 @@ Traceback (most recent call last):
   File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\flask\app.py", line 1243, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Coding\Python\flask\micoblog05\app\routes.py", line 89, in before_request
+  File "D:\Coding\Python\flask\micoblog05\app\routes.py", line 79, in before_request
     if current_user.is_authenticated:
        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\werkzeug\local.py", line 311, in __get__
@@ -89,53 +89,18 @@ sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
 [SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
 FROM user 
 WHERE user.id = ?]
-[parameters: (1,)]
+[parameters: (2,)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
-2024-01-30 10:48:58,072 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
-2024-01-30 10:49:12,922 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
-2024-01-30 10:49:18,831 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
-2024-01-30 10:49:43,903 ERROR: Exception on /user/fei [GET] [in D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\flask\app.py:828]
-Traceback (most recent call last):
-  File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Coding\Python\flask\micoblog05\app\routes.py", line 85, in user
-    return render_template('user.html',user=user,posts=posts)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
-    self.environment.handle_exception()
-  File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "D:\Coding\Python\flask\micoblog05\app\templates\user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "D:\Coding\Python\flask\micoblog05\app\templates\base.html", line 35, in top-level template code
-    {% block content %}{% endblock %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Coding\Python\flask\micoblog05\app\templates\user.html", line 16, in block 'content'
-    {% include '_post.html' %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Coding\Python\flask\micoblog05\app\templates\_post.html", line 5, in top-level template code
-    <a href="{{ url.for('user',username=post.author.username) }}">
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Coding\Python\flask\micoblog05\.venv\Lib\site-packages\jinja2\environment.py", line 485, in getattr
-    return getattr(obj, attribute)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: 'url' is undefined
+2024-01-29 18:24:05,362 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-29 18:24:17,341 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-29 18:25:58,359 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-29 18:26:02,821 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-29 18:26:19,223 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-29 18:26:56,587 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-30 10:05:45,065 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-30 10:13:16,320 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-30 10:13:24,330 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-30 10:17:00,008 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-30 10:20:37,511 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-30 10:35:53,783 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
+2024-01-30 10:36:13,724 INFO: micoblog05 startup [in D:\Coding\Python\flask\micoblog05\app\__init__.py:46]
