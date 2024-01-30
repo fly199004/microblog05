@@ -46,4 +46,5 @@ if not app.debug:
     app.logger.info('micoblog05 startup')
 
 
+
 from app import routes,models,errors
