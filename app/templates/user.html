@@ -7,7 +7,8 @@
             <td><h1>User: {{ user.username }}</h1></td>
             {% if user.about_me %}<p>{{ user.about_me }}</p>
             {% endif %}
-            {% if user.last_seen %}<p>Last seen on: {{ user.last_seen }}</p>
+            {% if user.last_seen %}
+            <p>Last seen on:{{ moment(user.last_seen).format('LLL') }}</p>
             {% endif %}
         </tr>
     </table>
@@ -21,7 +22,5 @@
     {% if next_url %}
         <a href="{{ next_url }}">Older posts</a>
     {% endif %}
-    {% if user.last_seen %}
-    <p>Last seen on:{{ moment(user.last_seen).format('LLL') }}</p>
-    {% endif %}
+
 {% endblock %}
