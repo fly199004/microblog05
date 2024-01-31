@@ -21,4 +21,7 @@
     {% if next_url %}
         <a href="{{ next_url }}">Older posts</a>
     {% endif %}
+    {% if user.last_seen %}
+    <p>Last seen on:{{ moment(user.last_seen).format('LLL') }}</p>
+    {% endif %}
 {% endblock %}
